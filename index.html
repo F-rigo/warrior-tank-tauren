@@ -10,8 +10,8 @@
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,serif;font-size:17px;line-height:1.55}
 h1,h2,h3{font-family:Georgia,serif;margin:0}
 h1{font-size:clamp(1.5rem,4vw,2.1rem);color:var(--gold)}
-h2{font-size:1.3rem;color:var(--gold);margin:28px 0 10px}
-h3{font-size:1.05rem;margin-bottom:6px}
+h2{font-size:1.3rem;color:var(--gold);margin:30px 0 10px}
+h3{font-size:1.05rem;margin:16px 0 6px}
 a{color:var(--gold)}
 header{padding:22px 16px 14px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#24150f,var(--bg))}
 .sub{color:var(--muted);font-style:italic;margin:6px 0 0}
@@ -27,88 +27,146 @@ th{color:var(--gold);font-size:.85rem}
 .tag.ok{color:var(--ok);border-color:var(--ok)}
 .tag.div{color:var(--div);border-color:var(--div)}
 .tag.nc{color:var(--nc);border-color:var(--nc)}
+.meta{color:var(--muted);font-size:.92rem}
 ul{padding-left:20px;margin:6px 0}
 li{margin:3px 0}
 footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920px;margin:0 auto;border-top:1px solid var(--line)}
+nav.menu{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap}
+nav.menu .in{max-width:920px;margin:0 auto;padding:0 16px;display:flex;gap:4px}
+nav.menu a{display:inline-block;padding:11px 10px;color:var(--muted);text-decoration:none;font-size:.88rem;border-bottom:3px solid transparent}
+nav.menu a:hover,nav.menu a.on{color:var(--gold);border-bottom-color:#a6302a}
+h2{scroll-margin-top:52px}
 @media (max-width:520px){body{font-size:16px}}
 </style>
 </head>
 <body>
 <header>
   <h1>Warrior Tank Guide: Tauren Horde</h1>
-  <p class="sub">Protection Warrior for World of Warcraft: Forever, from level 1 to 60. Sources checked on November 17, 2026. Devastate does not appear in any source. Shield Slam (level 40 talent) is the main Protection ability.</p>
+  <p class="sub">Protection Warrior for World of Warcraft: Forever, from level 1 to 60. Sources read on November 17, 2026. Devastate does not appear in any source. Shield Slam (level 40 talent) is the main Protection ability.</p>
 </header>
+<nav class="menu" id="menu" aria-label="Seções do guia"><div class="in" id="menuIn"></div></nav>
 <main>
 
-<div class="note">Most sources were written before launch or during the beta. Warcraft Tavern's Protection and leveling guides are beta-only and capped at level 30. Items marked <span class="tag div">Sources differ</span> list each source's version. Items marked <span class="tag nc">Not confirmed</span> were not found in the sources I could read.</div>
+<div class="note">Wowhead Forever is the main source here (it has the most complete text). Mobalytics and Icy Veins blocked automated reading, so I used only their search summaries. Warcraft Tavern is beta-only (capped at level 30). Items marked <span class="tag div">Sources differ</span> list each source's version. Items marked <span class="tag nc">Not confirmed</span> were not found in a source I could read.</div>
 
-<h2>1. Talents by level range</h2>
+<h2>1. Leveling overview</h2>
+<div class="card">
+  <ul>
+    <li>Warriors get a big boost at level 16, when they learn Shield Block and Revenge. Wowhead says Protection is strong for leveling and that Arms and Fury Warriors may switch to it for the first 35 to 40 levels. <span class="tag ok">Confirmed</span> by Wowhead (November 6, 2026).</li>
+    <li>Protection has no run-speed boost. Charge is available from level 4, Intercept from level 30. <span class="tag ok">Confirmed</span> by Wowhead.</li>
+    <li>Victory Rush (new in Forever): heals 10% of max health and can be used for 20 seconds after killing a non-trivial enemy. Its cooldown is 30 seconds. <span class="tag ok">Confirmed</span> by Wowhead and Icy Veins.</li>
+    <li>Wowhead's leveling advice: pool rage between mobs. Demoralizing Shout and Thunder Clap cut the enemy's damage by 30 to 40%, so you spend less time eating.</li>
+  </ul>
+</div>
+
+<h3>Talent path while leveling (Wowhead)</h3>
+<div class="card">
+  <ul>
+    <li>Get Shield Specialization, Improved Revenge and Master of Defense first. Wowhead calls these the most impactful talents for Protection.</li>
+    <li>After that, the deep Protection route is recommended for most players: Defiance (dungeons), Vanguard (keeps rage without swapping to Charge), and Shield Slam.</li>
+    <li>The Arms route (Sweeping Strikes, Impale, Weaponmaster) is for experienced players who want cleave and are willing to stance-dance. The Fury route (Blood Craze, Enrage, Gore Drinker) is for more sustain later on.</li>
+    <li>Point-by-point talent ranks for leveling are in the Kami-Labs build (see section 2). Wowhead's talent page shows its builds as calculator images, not text.</li>
+  </ul>
+</div>
+
+<h3>Abilities to train while leveling (Wowhead)</h3>
+<div class="wrap"><table>
+  <tr><th>Level</th><th>Mandatory spells</th><th>Level</th><th>Optional (skip to save gold)</th></tr>
+  <tr><td>1</td><td>Heroic Strike (1 to 9)</td><td>18</td><td>Disarm</td></tr>
+  <tr><td>2</td><td>Battle Shout (1 to 7)</td><td>20</td><td>Slam (1 to 5)</td></tr>
+  <tr><td>4</td><td>Charge (1 to 3), Rend (1 to 7)</td><td>22</td><td>Intimidating Shout</td></tr>
+  <tr><td>6</td><td>Thunder Clap (1 to 6)</td><td>28</td><td>Overpower (2 to 3)</td></tr>
+  <tr><td>10</td><td>Sunder Armor (1 to 5)</td><td>36</td><td>Whirlwind</td></tr>
+  <tr><td>14</td><td>Revenge (1 to 6), Demoralizing Shout (1 to 5)</td><td>38</td><td>Pummel (1 to 2)</td></tr>
+  <tr><td>16</td><td>Shield Block</td><td></td><td></td></tr>
+  <tr><td>20</td><td>Cleave (1 to 5), Victory Rush</td><td></td><td></td></tr>
+  <tr><td>40</td><td>Shield Slam (1 to 4)</td><td></td><td></td></tr>
+</table></div>
+<p class="meta"><span class="tag ok">Confirmed</span> by Wowhead (November 6, 2026). Single source, so check the ranks in game.</p>
+
+<h3>Leveling rotation (Wowhead, same as the endgame priority)</h3>
+<div class="card">
+  <ul>
+    <li><strong>Single target:</strong> Shield Block (off the global cooldown) → Revenge → Shield Slam (once talented) → Bloodthirst (Fury variant only) → keep Sunder Armor at 5 stacks in groups → keep Thunder Clap, Battle Shout and Demoralizing Shout up → Rend if you're already high on threat → Sunder Armor with spare rage and globals → Heroic Strike above 30 rage (off the global cooldown).</li>
+    <li><strong>AoE:</strong> Thunder Clap → Shield Block (off the global cooldown) → Revenge → Shield Slam → Bloodthirst → keep Battle Shout and Demoralizing Shout up → Cleave above 30 rage (off the global cooldown).</li>
+    <li>Execute is the top damage ability below 20% health, but you must leave Defensive Stance to cast it. Don't swap while rage is high or incoming damage is a concern.</li>
+  </ul>
+</div>
+
+<h3>Camping buffs (Wowhead)</h3>
+<div class="card">
+  <ul>
+    <li><strong>Early:</strong> Sharpening Wheel (Strength), Faction Banner (Spirit), Lodestone (Attack Power).</li>
+    <li><strong>Mid:</strong> Camp Tent becomes worth it around level 22 to 25; Camp Chair gives 2% crit and cannot be found elsewhere.</li>
+    <li><strong>End:</strong> Camp Tent (disproportionate value in later levels), Camp Chair, and a First Aid Kit if you run dungeons without a Priest.</li>
+  </ul>
+</div>
+
+<h2>2. Talent builds at level 60 (Wowhead, plus Kami-Labs for levels 10 to 60)</h2>
+<div class="card">
+  <p><strong>Wowhead's builds</strong> (named, not point-counted in the text): Standard (Enrage 5, Deflection 4 and Anticipation, with Focused Rage as the key rage talent), Impale (Impale and Deep Wounds, with Rend scaling with Attack Power and Vanguard for quality of life), Fury-Prot (Flurry and Shield Slam, Bloodthirst, Death Wish for short fights), Dual Wield (no Protection points; for enemies whose melee attacks cannot be blocked, dodged or parried), and a Dungeon build (deep Protection, or a cleave build with Sweeping Strikes that requires stance-dancing).</p>
+  <p class="meta">Wowhead's standard build: Enrage uptime is about 67% against one target and nearly 100% against two or more. It skips most rage-reduction talents (Improved Thunder Clap, Improved Bloodrage, Improved Sunder Armor) because Wowhead's rage model makes them weak.</p>
+  <p><span class="tag div">Sources differ</span> The Kami-Labs 41 to 60 build (Protection 31, Fury 15, Arms 5) does not match Wowhead's Standard build point for point, and Mobalytics' talent grid conflicts with its own order (see section 3).</p>
+</div>
+
+<h2>3. Talent order by level range</h2>
 <div class="wrap"><table>
   <tr><th>Levels</th><th>Build</th><th>Status</th></tr>
   <tr><td>10 to 19</td><td>Shield Specialization 5, Improved Revenge 3, Improved Thunder Clap 2 (Mobalytics and Kami-Labs agree)</td><td><span class="tag ok">Confirmed</span></td></tr>
   <tr><td>20 to 29</td><td>Kami-Labs and Icy Veins: Master of Defense 2, Last Stand, Improved Thunder Clap, Defiance 3, Vanguard, Improved Bloodrage 2. Mobalytics (Subtle): Improved Sunder Armor 3 in place of Defiance.</td><td><span class="tag div">Sources differ</span></td></tr>
   <tr><td>30 to 39</td><td>Concussion Blow, Focused Rage 3, Improved Shield Wall, Bastion 5 (Kami-Labs and Mobalytics agree). Icy Veins describes Focused Rage at 30 to 32 and Concussion Blow at 33.</td><td><span class="tag ok">Confirmed</span> (Icy Veins order differs)</td></tr>
   <tr><td>40</td><td>Shield Slam 1</td><td><span class="tag ok">Confirmed</span></td></tr>
-  <tr><td>41 to 60</td><td>Kami-Labs: Fury Cruelty 5, Lingering Rage 4, Enrage 5, then Arms Improved Rend 3 and Deflection 2 (final split Protection 31, Fury 15, Arms 5). Mobalytics: Cruelty 5, Unbridled Wrath 5, Blood Craze 3, Piercing Howl 1, Lingering Rage 1, Enrage 5, but its own talent grid shows Arms 3, Fury 15, Protection 33. Wowhead (overview, with no point counts): not readable.</td><td><span class="tag div">Sources differ</span></td></tr>
-</table></div>
-<div class="card"><p class="meta">Kami-Labs (November 12, 2026) is the only source with a full 10 to 60 path of 51 points. It says its point order comes from Mobalytics, but the two do not match from level 41 on.</p></div>
-
-<h2>2. Rotation and tanking, levels 30 to 60</h2>
-<div class="card">
-  <ul>
-    <li><strong>Single target (Icy Veins):</strong> Battle Shout, Sunder Armor and Demoralizing Shout kept up, then Shield Block, Shield Slam, Revenge, Thunder Clap, Rend, Sunder Armor, Heroic Strike. <span class="tag div">Sources differ</span> on whether Shield Slam or Revenge comes first. Icy Veins puts Shield Slam first. Mobalytics lists Revenge first.</li>
-    <li><strong>AoE (Icy Veins):</strong> Thunder Clap (up to 4 targets), Shield Slam, Revenge, Sunder Armor, Cleave.</li>
-    <li><strong>Shield Block:</strong> 10 rage, +75% block chance for 7 seconds or 2 blocks, 5 second cooldown, off the global cooldown. <span class="tag ok">Confirmed</span> by Wowhead, Icy Veins and Mobalytics.</li>
-    <li><strong>Shield Slam:</strong> 20 rage, 6 second cooldown, scales with Block Value, 50% chance to dispel a magic effect. Rage cost from Icy Veins only (<span class="tag nc">Not confirmed</span> elsewhere).</li>
-    <li><strong>Revenge:</strong> 5 rage, 5 second cooldown (Icy Veins only).</li>
-    <li><strong>Thunder Clap:</strong> 6 second cooldown, usable in Defensive Stance. <span class="tag ok">Confirmed</span> by all three sources.</li>
-    <li><strong>Heroic Strike and Cleave:</strong> rage dump. Sources differ on the threshold: Wowhead suggests 30+ rage, Mobalytics suggests 50 or 60+.</li>
-  </ul>
-</div>
-<h3>Defensive cooldowns</h3>
-<div class="wrap"><table>
-  <tr><th>Ability</th><th>Effect</th><th>Cooldown</th><th>Status</th></tr>
-  <tr><td>Shield Wall</td><td>60% damage reduction for 12 seconds (Icy Veins)</td><td>15 min base, 4 min with Improved Shield Wall</td><td><span class="tag ok">Confirmed</span> cooldown (Wowhead, Icy Veins). <span class="tag nc">Not confirmed</span> the 60% value (Icy Veins only)</td></tr>
-  <tr><td>Last Stand</td><td>+30% max health for 20 seconds</td><td>3 min</td><td><span class="tag ok">Confirmed</span> cooldown (Mobalytics, Icy Veins)</td></tr>
-  <tr><td>Victory Rush</td><td>Heals 10% of max health</td><td>30 seconds</td><td><span class="tag ok">Confirmed</span> (Mobalytics, Icy Veins)</td></tr>
-  <tr><td>Retaliation</td><td>Icy Veins only</td><td>15 min</td><td><span class="tag nc">Not confirmed</span> elsewhere</td></tr>
-  <tr><td>Recklessness</td><td>Icy Veins only: you take 20% more damage</td><td>30 min</td><td><span class="tag nc">Not confirmed</span> elsewhere</td></tr>
+  <tr><td>41 to 60</td><td>Kami-Labs: Cruelty 5, Lingering Rage 4, Enrage 5, Improved Rend 3, Deflection 2 (Protection 31, Fury 15, Arms 5). Mobalytics: Cruelty 5, Unbridled Wrath 5, Blood Craze 3, Piercing Howl 1, Lingering Rage 1, Enrage 5, with a talent grid that shows Arms 3, Fury 15, Protection 33.</td><td><span class="tag div">Sources differ</span></td></tr>
 </table></div>
 
-<h2>3. Weapons, shield and the level 30 weapon quest</h2>
+<h2>4. Armor, weapons and the level 30 weapon quest</h2>
 <div class="card">
   <ul>
-    <li><strong>One-hander and shield to 60:</strong> Mobalytics (KallTorak) and Icy Veins. Pick the highest DPS one-hander and the highest armor shield. After level 40, Block Value also matters because it powers Shield Slam. <span class="tag ok">Confirmed</span></li>
-    <li><strong>Horde weapon rewards:</strong> Hammer of Orgrimmar (Ragefire Chasm), Wingblade (Wailing Caverns), Outlaw Sabre (Blackfathom Deeps), Bludgeon of Betrayed Virtues (level 35, Desolace reputation), Thrash Blade (Maraudon). Icy Veins mentions Thun'grim's Axe from a Barrens quest. Mobalytics source only. <span class="tag nc">Not confirmed</span> that these are the best picks for tanking.</li>
+    <li><strong>Weapons:</strong> Wowhead says rage generation is now normalized, so the highest-level weapon is the priority. If a fast and a slow weapon have similar stats, pick the fast one. Thrash Blade (Maraudon quest) is the best alternative until level 60 (Wowhead). <span class="tag ok">Confirmed</span> by Wowhead.</li>
+    <li><strong>Shield:</strong> take the highest armor shield you find. After level 40, Block Value also matters because it powers Shield Slam (Wowhead and Icy Veins).</li>
     <li><strong>Level 30 Whirlwind Weapon quest:</strong> Tauren start it with Torm Ragetotem in Thunder Bluff. It goes through Fray Island and Alterac Mountains, with an elite level 40 boss (Polestar). Rewards: Whirlwind Axe, Sword or Warhammer. <span class="tag ok">Confirmed</span> that all three are two-handers with item level 40, +16 Strength and +15 Stamina (ConquestCapped, LFCarry). They are DPS weapons, not tank weapons.</li>
     <li><span class="tag div">Sources differ</span> on where Berserker Stance comes from. Warcraft Tavern says "The Affray". Polestar lists it as the end of the Whirlwind chain.</li>
   </ul>
 </div>
 
-<h2>4. Tauren racials in Forever</h2>
+<h2>5. Defensive and offensive cooldowns (Wowhead)</h2>
+<div class="wrap"><table>
+  <tr><th>Ability</th><th>Effect</th><th>Cooldown</th><th>Status</th></tr>
+  <tr><td>Shield Wall</td><td>Reduces damage taken by 60% for 12 seconds. Defensive Stance only.</td><td>15 min base, 4 min with Improved Shield Wall</td><td><span class="tag ok">Confirmed</span> by Wowhead (overview and rotation)</td></tr>
+  <tr><td>Last Stand</td><td>+30% max health for 20 seconds</td><td>3 min</td><td><span class="tag ok">Confirmed</span> (Mobalytics, Icy Veins)</td></tr>
+  <tr><td>Victory Rush</td><td>Heals 10% of max health</td><td>30 seconds</td><td><span class="tag ok">Confirmed</span> (Wowhead, Icy Veins)</td></tr>
+  <tr><td>Shield Block</td><td>+75% block chance for 7 seconds, or 2 blocks. Off the global cooldown.</td><td>5 seconds</td><td><span class="tag ok">Confirmed</span> (Wowhead, Icy Veins, Mobalytics)</td></tr>
+  <tr><td>Thunder Clap</td><td>Usable in Defensive Stance. Hits up to 4 targets, slows attack speed by 20%.</td><td>6 seconds (was 4)</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Retaliation</td><td>Counterattacks each melee hit for 15 seconds or 30 stacks. Battle Stance only. A two-hander increases its damage.</td><td>Decoupled from Recklessness and Shield Wall</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Recklessness</td><td>+100% crit chance for 15 seconds, +20% damage taken. Berserker Stance only.</td><td>30 min</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Mocking Blow</td><td>Forces the target to attack you for 6 seconds. Does not put you at the top of the threat table. Battle Stance only.</td><td>Backup taunt</td><td><span class="tag ok">Confirmed</span> (Wowhead)</td></tr>
+  <tr><td>Challenging Shout</td><td>Forces nearby enemies to attack you for 5 seconds (AoE taunt, no threat change)</td><td>10 min</td><td><span class="tag nc">Not confirmed</span> cooldown</td></tr>
+</table></div>
+<p class="meta">Wowhead gives the Protection stance effects: Defensive Stance reduces damage taken and dealt by 10% and increases threat by 30%. Battle Stance reduces threat by 20%. Berserker Stance raises crit by 3% and damage taken by 10%.</p>
+
+<h2>6. Tauren racials (Wowhead, plus Mobalytics and Method numbers)</h2>
 <div class="wrap"><table>
   <tr><th>Racial</th><th>Effect</th><th>Status</th></tr>
-  <tr><td>War Stomp</td><td>2 second stun (Mobalytics, Method). Up to 5 enemies within 8 yards and a 1.5 minute cooldown (Mobalytics only). Wowhead warns that you cannot block, dodge or parry during the 0.5 second cast.</td><td><span class="tag ok">Confirmed</span> stun. <span class="tag nc">Not confirmed</span> target count and cooldown</td></tr>
-  <tr><td>Plainsrunning</td><td>+2% movement speed every 5 seconds while moving, up to +60%. Standing still or taking damage reduces it. Hotfix on November 5: no longer stacks while carrying a battleground flag.</td><td><span class="tag ok">Confirmed</span> 60% cap (Mobalytics, Wowhead). <span class="tag nc">Not confirmed</span> the 2% per 5 seconds rate (Mobalytics only)</td></tr>
-  <tr><td>Endurance</td><td>+5% total health (Mobalytics, Method). Warcraft Tavern and Method mention a small critical damage bonus (+2%); Mobalytics does not.</td><td><span class="tag ok">Confirmed</span> +5% health. <span class="tag div">Sources differ</span> on the critical damage bonus</td></tr>
-  <tr><td>Cultivation</td><td>Grows a harvestable copy of a nearby herb, usable without Herbalism (Mobalytics, Method, Warcraft Tavern). Hotfix on November 9: cooldown starts after the cast finishes.</td><td><span class="tag ok">Confirmed</span> effect. <span class="tag nc">Not confirmed</span> the 15 minute cooldown (Mobalytics only)</td></tr>
+  <tr><td>Endurance</td><td>Wowhead calls it reworked and "the best racial trait in the game when it comes to defensive utility" for Protection. Mobalytics and Method: +5% total health. Warcraft Tavern and Method also mention a small critical damage bonus.</td><td><span class="tag ok">Confirmed</span> +5% health. <span class="tag div">Sources differ</span> on the critical damage bonus</td></tr>
+  <tr><td>Plainsrunning</td><td>+2% movement speed every 5 seconds while moving, up to +60%. Wowhead says this is "outrageously good" while leveling before level 40. Standing still or taking damage reduces it. Hotfix November 5: no longer stacks with a battleground flag.</td><td><span class="tag ok">Confirmed</span> 60% cap (Wowhead, Mobalytics). <span class="tag nc">Not confirmed</span> the 2% per 5 seconds rate (Mobalytics only)</td></tr>
+  <tr><td>War Stomp</td><td>2 second stun (Mobalytics, Method). Wowhead warns that you cannot block, dodge or parry while casting it, which matters with multiple mobs. Up to 5 enemies within 8 yards and a 1.5 minute cooldown (Mobalytics only).</td><td><span class="tag ok">Confirmed</span> stun. <span class="tag nc">Not confirmed</span> target count and cooldown</td></tr>
+  <tr><td>Cultivation</td><td>Grows a harvestable copy of a nearby herb, usable without Herbalism (Mobalytics, Method, Warcraft Tavern). Hotfix November 9: cooldown starts after the cast finishes.</td><td><span class="tag ok">Confirmed</span> effect. <span class="tag nc">Not confirmed</span> the 15 minute cooldown (Mobalytics only)</td></tr>
 </table></div>
-<p class="meta">Racial sources: Method (October 19, 2026) and Warcraft Tavern's Tauren page (no date). Warcraft Tavern's page may still show a removed +3% mounted speed bonus from the beta.</p>
+<p class="meta">Warcraft Tavern's Tauren page may still show a removed +3% mounted speed bonus from the beta.</p>
 
-<h2>5. Horde leveling zones</h2>
+<h2>7. Horde leveling zones</h2>
 <div class="wrap"><table>
   <tr><th>Levels</th><th>Zones</th><th>Status</th></tr>
   <tr><td>1 to 9</td><td>Mulgore (Tauren start), Durotar, Tirisfal Glades</td><td><span class="tag nc">Not confirmed</span> (Warcraft Tavern only)</td></tr>
   <tr><td>10 to 19</td><td>The Barrens, Silverpine Forest, Stonetalon Mountains</td><td><span class="tag ok">Confirmed</span> (Icy Veins and Warcraft Tavern)</td></tr>
   <tr><td>18 to 24</td><td>Ashenvale, Hillsbrad Foothills, Duskwood</td><td><span class="tag ok">Confirmed</span> (Icy Veins and Warcraft Tavern)</td></tr>
   <tr><td>25 to 30</td><td>Thousand Needles, Wetlands, Alterac Mountains, Arathi Highlands, Desolace, Stranglethorn Vale</td><td><span class="tag ok">Confirmed</span> for Thousand Needles and Wetlands. Others from Warcraft Tavern only</td></tr>
-  <tr><td>35 to 45</td><td>Badlands, Dustwallow Marsh, Feralas, Swamp of Sorrows, Riverglades, Shen'dralas, Tanaris, The Hinterlands, Searing Gorge, Azshara, Felwood, Blasted Lands</td><td><span class="tag nc">Not confirmed</span> for Horde access. Warcraft Tavern only, with no faction split</td></tr>
+  <tr><td>35 to 45</td><td>Badlands, Dustwallow Marsh, Feralas, Swamp of Sorrows, Riverglades, Shen'dralas, Tanaris, The Hinterlands, Searing Gorge, Azshara, Felwood, Blasted Lands</td><td><span class="tag nc">Not confirmed</span> for Horde access. Warcraft Tavern only</td></tr>
   <tr><td>48 to 60</td><td>Un'Goro Crater, Burning Steppes, Western Plaguelands, Winterspring, Eastern Plaguelands, Silithus, Deadwind Pass, Mount Hyjal</td><td><span class="tag nc">Not confirmed</span> for Horde access. Warcraft Tavern only</td></tr>
 </table></div>
-<p class="meta">Zone levels differ across sources, so confirm them on the in-game map before you travel.</p>
 
-<h2>6. Dungeons for a tank</h2>
-<div class="note info">Level ranges differ between Warcraft Tavern and Wowhead. Icy Veins gives a Horde route for levels 10 to 30 only. The Alliance dungeons (Hall of Thanes, The Stockade, Gnomeregan, Deadmines) are left out because no source confirms Horde access.</div>
+<h2>8. Dungeons for a tank</h2>
+<div class="note info">Level ranges differ between Warcraft Tavern and Wowhead. Alliance-only dungeons (Hall of Thanes, The Stockade, Gnomeregan, Deadmines) are left out because no source confirms Horde access.</div>
 <div class="wrap"><table>
   <tr><th>Dungeon</th><th>Warcraft Tavern</th><th>Wowhead</th><th>Status</th></tr>
   <tr><td>Ragefire Chasm</td><td>13 to 18</td><td>13 to 18</td><td><span class="tag ok">Confirmed</span></td></tr>
@@ -131,7 +189,7 @@ footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920p
 </table></div>
 <p class="meta"><strong>Group size (Wowhead only, <span class="tag nc">Not confirmed</span>):</strong> run 5 players if you need dungeon quests, since they cannot be completed in a raid group. Most dungeons allow 10 players. Blackrock Depths, Scholomance and Stratholme are 5-player only. Wowhead says the caps on the new dungeons are not final.</p>
 
-<h2>7. Hotfixes that affect Warrior tanks</h2>
+<h2>9. Hotfixes that affect Warrior tanks</h2>
 <p class="meta">There are <strong>no Protection-specific hotfixes</strong> in the sources. These are the relevant ones (Blizzard, hotfixes through November 16):</p>
 <div class="wrap"><table>
   <tr><th>Date</th><th>Change</th></tr>
@@ -142,24 +200,24 @@ footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920p
 </table></div>
 <p class="meta"><span class="tag ok">Confirmed</span> by Blizzard's hotfix notes. I found no hotfix dated November 17.</p>
 
-<h2>8. Level 60 endgame build</h2>
+<h2>10. Level 60 endgame</h2>
 <div class="card">
   <ul>
     <li><strong>Icy Veins Shield Slam tank:</strong> Arms 5, Fury 15, Protection 31. Named talents: Deflection, Anticipation, Shield Specialization, Master of Defense, Improved Shield Wall, Shield Slam, Cruelty, Enrage, Lingering Rage. Swaps for low rage are listed in the source.</li>
-    <li><strong>Wowhead, Method, Warcraft Tavern:</strong> sources give different raid builds (4/15/32, 17/3/31, 3/16/32 in Mobalytics). <span class="tag div">Sources differ</span> on the split.</li>
+    <li><strong>Wowhead's endgame builds</strong> (Standard, Impale, Fury-Prot, Dungeon) are in section 2.</li>
+    <li><span class="tag div">Sources differ</span> on the final split across sources (Icy Veins 5/15/31; Mobalytics 3/16/32 in its talent grid).</li>
     <li>Mobalytics' level 60 tab is marked "WIP". Raids open December 9, 2026.</li>
-    <li><span class="tag nc">Not confirmed</span> as a single build. Only Icy Veins gives a full version, and it was written before launch.</li>
+    <li><span class="tag nc">Not confirmed</span> as a single build for launch.</li>
   </ul>
 </div>
 
 <h2>What I could not confirm</h2>
 <div class="card">
   <ul>
-    <li>Talents 20 to 29 and 41 to 60: sources disagree, and Mobalytics contradicts itself.</li>
-    <li>Zones from level 30 to 60 for Horde: only Warcraft Tavern covers them, without a faction split.</li>
+    <li>Talents 20 to 29 and 41 to 60: sources disagree, and Mobalytics contradicts itself. Wowhead's talent page shows builds as images only.</li>
+    <li>Horde zones from level 30 to 60: only Warcraft Tavern covers them, without a faction split.</li>
     <li>Group size on the new dungeons: Wowhead says the caps are not final.</li>
-    <li>Level 60 build: only one pre-launch source, and Mobalytics' is unfinished.</li>
-    <li>Pages that did not open: Icy Veins Tauren page and Mobalytics endgame page.</li>
+    <li>Icy Veins and Mobalytics: blocked for automated reading. Only their search snippets were used.</li>
     <li>Warcraft Tavern's Protection and leveling guides are beta-only (level 30 cap). Used as secondary sources only.</li>
   </ul>
 </div>
@@ -167,19 +225,18 @@ footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920p
 <h2>Sources</h2>
 <div class="card">
   <ul>
-    <li><a href="https://www.wowhead.com/forever/guide/classes/warrior/protection/overview-pve-tank" target="_blank" rel="noopener">Wowhead Forever: Protection Warrior overview</a> (updated November 14, 2026, patch 1.60.1)</li>
-    <li><a href="https://mobalytics.gg/wow-forever/classes/protection-warrior-guide-kalltorak" target="_blank" rel="noopener">Mobalytics (KallTorak): Protection Warrior guide</a> (updated November 11, 2026)</li>
-    <li><a href="https://mobalytics.gg/wow-forever/classes/protection-warrior-leveling-guide-subtle" target="_blank" rel="noopener">Mobalytics (Subtle): Protection Warrior leveling</a> (updated November 15, 2026)</li>
-    <li><a href="https://www.icy-veins.com/wow-forever/protection-warrior-leveling" target="_blank" rel="noopener">Icy Veins: Protection Warrior leveling</a> (November 4, 2026)</li>
-    <li><a href="https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-spec-builds-talents" target="_blank" rel="noopener">Icy Veins: Protection Warrior talents</a> (November 4, 2026)</li>
-    <li><a href="https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-rotation-cooldowns-abilities" target="_blank" rel="noopener">Icy Veins: Protection Warrior rotation and cooldowns</a> (November 4, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/warrior/protection/overview-pve-tank" target="_blank" rel="noopener">Wowhead Forever: Protection Warrior overview</a> (updated November 14, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-leveling-tips" target="_blank" rel="noopener">Wowhead Forever: Protection Warrior leveling guide</a> (updated November 6, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank" target="_blank" rel="noopener">Wowhead Forever: Protection Warrior rotation and cooldowns</a> (updated October 29, 2026)</li>
+    <li><a href="https://www.wowhead.com/forever/guide/classes/warrior/protection/talent-builds-pve-tank" target="_blank" rel="noopener">Wowhead Forever: Best Protection Warrior talent builds</a> (updated November 4, 2026)</li>
+    <li><a href="https://mobalytics.gg/wow-forever/classes/protection-warrior-guide-kalltorak" target="_blank" rel="noopener">Mobalytics (KallTorak): Protection Warrior guide</a> (updated November 11, 2026, search snippet only)</li>
+    <li><a href="https://mobalytics.gg/wow-forever/classes/protection-warrior-leveling-guide-subtle" target="_blank" rel="noopener">Mobalytics (Subtle): Protection Warrior leveling</a> (updated November 15, 2026, search snippet only)</li>
+    <li><a href="https://www.icy-veins.com/wow-forever/protection-warrior-leveling" target="_blank" rel="noopener">Icy Veins: Protection Warrior leveling</a> (November 4, 2026, search snippet only)</li>
     <li><a href="https://www.method.gg/wow-forever/wow-forever-warrior-leveling-guide-and-talents" target="_blank" rel="noopener">Method: WoW Forever Warrior leveling</a> (October 9, 2026, prelaunch)</li>
     <li><a href="https://kami-labs.fr/en/wow-forever/build-guerrier-protection-leveling-wow-forever/" target="_blank" rel="noopener">Kami-Labs: Protection Warrior leveling build, levels 10 to 60</a> (November 12, 2026)</li>
-    <li><a href="https://www.warcrafttavern.com/forever/guides/protection-warrior/" target="_blank" rel="noopener">Warcraft Tavern: Protection Warrior</a> (beta, no date)</li>
     <li><a href="https://www.warcrafttavern.com/forever/guides/warrior-leveling/" target="_blank" rel="noopener">Warcraft Tavern: Warrior leveling</a> (beta, no date)</li>
     <li><a href="https://polestar.guide/guides/class/warrior/whirlwind-weapon" target="_blank" rel="noopener">Polestar: Whirlwind Weapon quest</a> (November 15, 2026)</li>
     <li><a href="https://conquestcapped.com/guides/wow-forever/wow-forever-warrior-weapon-quest/" target="_blank" rel="noopener">ConquestCapped: Warrior weapon quest</a> (October 23, 2026)</li>
-    <li><a href="https://www.method.gg/wow-forever/all-new-racial-abilities-in-world-of-warcraft-forever" target="_blank" rel="noopener">Method: new racial abilities</a> (October 19, 2026)</li>
     <li><a href="https://news.blizzard.com/en-us/article/24315281/wow-forever-hotfixes-november-16-2026" target="_blank" rel="noopener">Blizzard: WoW Forever hotfixes, November 5 to 16</a></li>
   </ul>
 </div>
@@ -187,5 +244,26 @@ footer{color:var(--muted);font-size:.88rem;padding:20px 16px 36px;max-width:920p
 <footer>
   This guide summarizes community and beta-era sources. It is not an official Blizzard guide. Check every <span class="tag div">Sources differ</span> and <span class="tag nc">Not confirmed</span> item in game.
 </footer>
+<script>
+(function(){
+  var box=document.getElementById("menuIn");
+  var heads=document.querySelectorAll("main h2");
+  heads.forEach(function(h,i){
+    h.id="sec-"+i;
+    var a=document.createElement("a");
+    a.href="#sec-"+i;
+    a.textContent=h.textContent.replace(/^\d+\.\s*/,"");
+    box.appendChild(a);
+  });
+  var links=box.querySelectorAll("a");
+  function mark(){
+    var y=window.scrollY+80,cur=0;
+    heads.forEach(function(h,i){if(h.offsetTop<=y)cur=i;});
+    links.forEach(function(a,i){a.classList.toggle("on",i===cur);});
+  }
+  window.addEventListener("scroll",mark,{passive:true});
+  mark();
+})();
+</script>
 </body>
 </html>
